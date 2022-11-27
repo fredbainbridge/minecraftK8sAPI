@@ -5,6 +5,7 @@ import "gorm.io/gorm"
 type World struct {
 	gorm.Model
 	Name    string
+	K8sName string
 	Port    int
 	Tags    []Tag
 	Volumes []Volume
@@ -19,8 +20,9 @@ type Tag struct {
 
 type Volume struct {
 	gorm.Model
-	WorldId uint
-	Path    string
-	Storage string
-	Claim   string
+	WorldId   uint
+	HostPath  string
+	LocalPath string
+	Storage   string
+	Claim     string
 }
