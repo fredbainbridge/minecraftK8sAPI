@@ -16,6 +16,8 @@ func main() {
 	r := gin.Default()
 
 	r.POST("/worlds", controllers.WorldsCreate)
+	r.GET("/worlds/:worldId", controllers.WorldsRead)
+	r.GET("/worlds", controllers.WorldsReadList)
 	r.DELETE("/worlds/:worldId", controllers.WorldsDelete)
 
 	r.Run()
